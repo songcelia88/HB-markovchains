@@ -66,15 +66,16 @@ def make_text(chains,ngram_size):
     """Return text from chains."""
 
     words = []
-
+    ending_punctuation = [".", "?", "!"] #list of punctuations that end sentences
     # your code goes here
     while True:
         first_words = choice(list(chains.keys())) #(tuple of ngram size)
         if first_words[0][0].isupper():
             break
 
-    next_word = choice(chains[first_words])
-    words.extend(list(first_words) + [next_word])
+    #next_word = choice(chains[first_words])
+    #words.extend(list(first_words) + [next_word])
+    words.extend(list(first_words))
     
 
     #print(words)
@@ -86,8 +87,8 @@ def make_text(chains,ngram_size):
         if key in chains:
             next_word = choice(chains[key])
             words.append(next_word)
-            if words[-1][-1] in string.punctuation:
-                break
+            # if words[-1][-1] in ending_punctuation:
+            #     break
         else:
             break
 

@@ -65,8 +65,9 @@ def make_text(chains):
 
     # your code goes here
     first_words = choice(list(chains.keys()))
-    next_word = choice(chains[first_words])
-    words.extend(list(first_words) + [next_word])
+    #next_word = choice(chains[first_words])
+    #words.extend(list(first_words) + [next_word])
+    words.extend(list(first_words))
     #print(words)
 
     while True:
